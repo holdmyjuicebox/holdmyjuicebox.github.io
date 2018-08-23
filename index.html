@@ -1,101 +1,68 @@
 <!DOCTYPE html>
 <html>
-<!-- <head section> -->
-<!--<Font style Playfair Display>-->
-   <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
-         <link rel="stylesheet" type="text/css" href="My_website.css">
-         <title>Mark Ho Sweeyung</title>
-   
+<head>
+    <title>Tic Tac T0e</title>
+    <style>
 
-<body>
-   <!-- Introduction -->
-     
-   <h1>Hello I'm Mark!</h1>
+    @import url('https://fonts.googleapis.com/css?family=Merriweather|Oswald|Sawarabi+Mincho');
 
-</body>
+    body{
+        width: 550px;
+        margin: auto;
+        background-color: #c2ebc2;
+    }
 
-<section>
-   <!-- About section -->
-<h2 class="Lead">About</h2>
-<p>
-   There isnt much that is interesting really. 
-   I enjoy playing sports but I excel the most at tennis and football.
-   However, for football I mainly watch Liverpool FC games because I am a big fan of them and for tenis well I can watch nearly all the matches.
-   I went to a small school named Arrows Resource Center, it's located in Ara Damansara.
-   Which I recently graduated from at the end of 2017.
-   I come from a family of four with myslef being the youngest at 17 and I have a elder sister who's 23 this year. 
-   
-   
-</p>
-</section>
+    h1{
+        border-bottom: 1px solid black;
+        font-family: 'Oswald';
+    }
 
-<section>
-<h2 class="Lead">Hobbies</h2>
-<!-- Hobbies -->
-<p> 
-   As stated before I enjoy playing Football and tennis. 
-   I used to be from the Harimau junior but that was a very long time ago.
-   As for tennis, I recently joined a few tournaments but didn't get very far becuase its tough playing adults who are physcially stronger than I am.
-   I've won one tournament in Port Dickson before
-   Also, I thoroughly enjoy listening to music.
-   It would be hard to class one genre for me.
-   It spans from hip-hop,indie-alternative,rock and many more. 
-   
-   
-</p>
-</section>
+    .Square{
+        height: 80px;
+        width: 80px;
+        font-size:45pt;
+        text-align: center;
+        font-family: 'Merriweather';
+    }
 
-<h2 class="Lead"> Gallery </h2>
-<!-- Pictures and a video -->
+    #message {
+        font-size: 18pt;
+        font-family: 'Oswald';
+    }
 
-<section>
-   <div>
-      <img src="https://scontent.fkul8-1.fna.fbcdn.net/v/t1.0-9/12718303_822953961150349_1424304808398684666_n.jpg?_nc_cat=0&oh=bfbabad55433ee0b055ac9250776d09b&oe=5C03CDB5"width 200 height="200"> 
-      <img src="https://scontent.fkul8-1.fna.fbcdn.net/v/t1.0-9/16998729_1577865068898745_5673205677604545149_n.jpg?_nc_cat=0&oh=cd5600639e3c7f099b3ecd7f380f6c0f&oe=5C090188"width 200 height="200">
-      <img src="https://scontent.fkul8-1.fna.fbcdn.net/v/t1.0-9/6903_822950487817363_1809329507324330062_n.jpg?_nc_cat=0&oh=a4e362175f22e4935d6715c9df680879&oe=5C0D6AE3"width 200 height="200">
-      <img src="https://scontent.fkul8-1.fna.fbcdn.net/v/t1.0-9/10556352_822948651150880_7052519353100035447_n.jpg?_nc_cat=0&oh=705675acf03eb668321d384db7e8cbec&oe=5C086673"width 200 height="200">
-      <img src="https://scontent.fkul8-1.fna.fbcdn.net/v/t1.0-9/12289524_762555080523571_1680722381174899156_n.jpg?_nc_cat=0&oh=01c9de4fb95aedf953cbedbfed1989c7&oe=5C08B073"width 200 height 200>
-</div>
-   
-</section>
+    #restart {
+        font-size: 18pt;
+        font-family: 'Oswald';
+        text-decoration: none;
+        color: black;
+    }
 
-<table>
-   <tr> 
-      <!-- Hobbies -->
-      <td> <strong>Movies</strong></td><td><strong>Video Games</strong></td></td>
 
-   </tr>
-   <tr> 
-      <td>  
-         I enjoy watching movies such as Marvel's movies. 
-         My favourite superhero since young is Spider-Man. 
-         Since the MCU has started Iron Man is up there too. 
-         After watching Marvel's Infinity War it has left me wanting more for sure and made cant wait for Avengers 4 next year to see how it unfolds.
-      </td>
-      
-      <td>
-         Although I don't play video games as often. 
-         I recently bought God of War and it reminded me why loved video games to start with. 
-         It's not only exillerating but it tells a beautiful story about the father-son relationsip. 
-         I could go on and on about how good the game mechanics are or how invested the game made me but I wouldn't have enough time to say everything!
-      </td>
-   </tr>
-   </table>
-<p><strong>For more about me go to my</strong>
-      <br/>
-<ol>
-      <li><a href="https://www.facebook.com/mark.hosweeyung">Facebook</a></li>
-      <li><a href="https://www.instagram.com/markhosweeyung/">Instagram</a></li>
-      <li><a href="https://twitter.com/FartSpider">Twitter</a></li>
-</ol>
-</p>
-<br>
-<div>
-   <a href=""><iframe width="560" height="315" src="https://www.youtube.com/embed/7Q81nUNeAlA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-      <br/>Djokovic vs Nadal Wimbledon 2018</a>
-</div>
+    </style>
 </head>
+<body onload="startGame();">
+    <h1>Tic Tac Toe</h1>
+    <div id="message">Message will go.</div>
+    <table border="1">
+        <tr>
+            <td class="Square" id="s1" onClick="nextMove(this)"></td>
+            <td class="Square" id="s2" onClick="nextMove(this)"></td>
+            <td class="Square" id="s3" onClick="nextMove(this)"></td>
+        </tr>
+
+        <tr>
+            <td class="Square" id="s4" onClick="nextMove(this)"></td>
+            <td class="Square" id="s5" onClick="nextMove(this)"></td>
+            <td class="Square" id="s6" onClick="nextMove(this)"></td>
+        </tr>
+
+        <tr>
+            <td class="Square" id="s7" onClick="nextMove(this)"></td>
+            <td class="Square" id="s8" onClick="nextMove(this)"></td>
+            <td class="Square" id="s9" onClick="nextMove(this)"></td>
+        </tr>
+    </table>
+    <a href="javascript: startGame();" id="restart">Start Over</a>
+<script src="tic tac toe.js"></script>
 </body>
 </html>
